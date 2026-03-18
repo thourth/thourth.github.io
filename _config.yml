@@ -7,7 +7,7 @@ language: zh-CN
 timezone: Asia/Shanghai
 
 # URL設定
-url: https://bbs8rtknbw-cloud.github.io
+url: https://thourth.github.io
 root: /yasu123/   # GitHub Pages のサブディレクトリ
 
 # ディレクトリ
