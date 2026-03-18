@@ -1,0 +1,101 @@
+/* 引用位置： butterfly的config里面：     inject:head:- <link rel="stylesheet" href="/css/XXXXXXXX.css">    */
+
+
+
+/* ========== 公共样式（浅色和深色通用） ========== */
+
+/* 播放器整体背景 + 半透明 + 圆角 */
+.aplayer,
+.aplayer .aplayer-body {
+  border-radius: 8px !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 封面图圆角（注意仍会存在边角未被背景包住的视觉小瑕疵） */
+.aplayer .aplayer-pic {
+  border-radius: 6px !important;
+}
+
+/* 歌曲标题 */
+.aplayer .aplayer-info .aplayer-title {
+  color: #000 !important;
+  font-weight: 600;
+}
+
+/* 艺术家名样式 */
+.aplayer .aplayer-info .aplayer-author {
+  color: #666 !important;
+  font-size: 90%;
+}
+
+/* 播放进度条样式 */
+.aplayer .aplayer-bar-wrap {
+  background-color: transparent !important;
+  height: 4px !important;
+  margin: 0 !important;
+}
+
+.aplayer .aplayer-bar {
+  background-color: #ddd !important;
+  border-radius: 4px !important;
+}
+
+.aplayer .aplayer-played {
+  background-color: #ff89d6 !important;
+}
+
+.aplayer .aplayer-thumb {
+  background-color: #ff89d6 !important;
+  border: none;
+}
+
+/* 控制按钮颜色 */
+.aplayer .aplayer-icon {
+  color: #333 !important;
+}
+
+/* 歌单背景色 + 左上角圆角 + 右上角圆角 */
+.aplayer.aplayer-withlist .aplayer-list {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 8px 8px 0 0 !important; /* 左上和右上圆角，底部不圆 */
+}
+
+/* ========== 深色模式适配 ========== */
+html[data-theme="dark"] .aplayer,
+html[data-theme="dark"] .aplayer .aplayer-body {
+  background-color: rgba(30, 30, 30, 0.7) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme="dark"] .aplayer .aplayer-title {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .aplayer .aplayer-author {
+  color: #bbbbbb !important;
+}
+
+html[data-theme="dark"] .aplayer .aplayer-bar-wrap {
+  background-color: transparent !important;
+}
+
+html[data-theme="dark"] .aplayer .aplayer-bar {
+  background-color: #444 !important;
+  border-radius: 4px;
+}
+
+html[data-theme="dark"] .aplayer .aplayer-played,
+html[data-theme="dark"] .aplayer .aplayer-thumb {
+  background-color: #1abc9c !important;
+}
+
+html[data-theme="dark"] .aplayer .aplayer-icon {
+  color: #eee !important;
+}
+
+html[data-theme="dark"] .aplayer.aplayer-withlist .aplayer-list {
+  background-color: rgba(50, 50, 50, 0.9) !important;
+  border-radius: 8px 8px 0 0 !important;
+}
+
