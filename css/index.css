@@ -7465,7 +7465,7 @@ blockquote.pullquote.right {
   width: 600px;
   background: var(--search-bg);
   --search-height: 100vh;
-  border-radius: 8px;
+  border-radius: 3px;
 }
 @media screen and (max-width: 768px) {
   .search-dialog {
@@ -7497,8 +7497,8 @@ blockquote.pullquote.right {
   -webkit-align-items: center;
   align-items: center;
   margin-bottom: 14px;
-  color: #a9d5cd;
-  font-size: 1.4em;
+  color: #011713;
+  font-size: 2.0em;
   line-height: 1;
 }
 .search-dialog .search-nav .search-dialog-title {
@@ -7515,7 +7515,7 @@ blockquote.pullquote.right {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  color: #858585;
+  color: #000000;
   text-align: right;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -7539,7 +7539,7 @@ blockquote.pullquote.right {
   padding: 5px 14px;
   width: 100%;
   outline: none;
-  border: 2px solid #a9d5cd;
+  border: 2px solid #b1e6dc;
   border-radius: 40px;
   background: var(--search-bg);
   color: var(--search-input-color);
