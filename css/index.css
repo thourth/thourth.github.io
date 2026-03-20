@@ -223,21 +223,16 @@ template {
 .layout > div:first-child:not(.nc),
 #recent-posts .recent-post-item,
 #article-container .shuoshuo-item,
-#aside-content .card-widget,
-.layout .pagination > *:not(.space) {
-  background: none;
-  box-shadow: none;
-  border-radius: 0;
-  transition: none;
+#aside-content .card-widget {
+  border: none;
+  padding: 0;
 }
-.cardHover:hover,
-.layout > div:first-child:not(.nc):hover,
-#recent-posts .recent-post-item:hover,
-#article-container .shuoshuo-item:hover,
-#aside-content .card-widget:hover,
-.layout .pagination > *:not(.space):hover {
-  -webkit-box-shadow: var(--card-hover-box-shadow);
-  box-shadow: var(--card-hover-box-shadow);
+.layout .pagination > *:not(.space) {
+  bordor-bottom: 1px solid #ccc;
+  padding: 16px 0px;
+}
+#recent-posts .recent-post-item:hover {
+  background: rgba(0,0,0,0.03);
 }
 .imgHover,
 .article-sort-item-img :first-child,
