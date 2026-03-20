@@ -2363,9 +2363,6 @@ figure.highlight pre .javascript .function {
 .layout.hide-aside > div {
   width: 100% !important;
 }
-.apple #page-header.full_page {
-  background-attachment: scroll !important;
-}
 .apple .recent-post-item,
 .apple .avatar-img,
 .apple .flink-item-icon {
@@ -4150,16 +4147,13 @@ figure.highlight pre .javascript .function {
   display: block;
 }
 #page-header {
-  position: relative;
+  position: fixed;
   width: 100%;
   background-color: #a9d5cd;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -ms-transition: all 0.5s;
+  z-index: 999;
   transition: all 0.5s;
 }
 #page-header:not(.not-top-img):before {
@@ -4226,12 +4220,6 @@ figure.highlight pre .javascript .function {
   bottom: 10px;
   width: 100%;
   cursor: pointer;
-}
-#page-header #scroll-down .scroll-down-effects {
-  position: relative;
-  width: 100%;
-  color: var(--light-grey);
-  font-size: 20px;
 }
 #page-header.not-home-page {
   height: 400px;
@@ -7819,3 +7807,4 @@ blockquote.pullquote.right {
     transform: rotate(360deg);
   }
 }
+
