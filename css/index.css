@@ -350,7 +350,7 @@ template {
   -moz-animation: header-effect 1s;
   -o-animation: header-effect 1s;
   -ms-animation: header-effect 1s;
-  animation: header-effect 1s;
+  animation: header-effect 5s;
 }
 #site-title,
 #site-subtitle {
