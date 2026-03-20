@@ -4365,8 +4365,8 @@ figure.highlight pre .javascript .function {
 }
 #page-header.nav-fixed #nav {
   position: fixed;
-  top: -60px;
-  z-index: 91;
+  top: 0px;
+  z-index: 999;
   background: rgba(255,255,255,0.7);
   -webkit-box-shadow: 0 5px 6px -5px rgba(133,133,133,0.6);
   box-shadow: 0 5px 6px -5px rgba(133,133,133,0.6);
