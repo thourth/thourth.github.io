@@ -4286,6 +4286,10 @@ figure.highlight pre .javascript .function {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
   font-size: 1.43em;
 }
+
+
+
+
 #page-header #scroll-down {
   position: fixed;
   bottom: 10px;
@@ -4293,7 +4297,7 @@ figure.highlight pre .javascript .function {
   cursor: pointer;
 }
 #page-header #scroll-down .scroll-down-effects {
-  position: relative;
+  position: fixed;
   width: 100%;
   color: var(--light-grey);
   font-size: 20px;
@@ -4307,7 +4311,7 @@ figure.highlight pre .javascript .function {
   }
 }
 #page-header #page-site-info {
-  position: absolute;
+  position: fixed;
   top: 200px;
   padding: 0 10px;
   width: 100%;
@@ -4326,7 +4330,7 @@ figure.highlight pre .javascript .function {
   }
 }
 #page-header #post-info {
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 30px;
 }
@@ -4364,6 +4368,13 @@ figure.highlight pre .javascript .function {
   color: var(--font-color);
   text-shadow: none;
 }
+
+
+
+
+
+
+
 #page-header.nav-fixed #nav {
   position: fixed;
   top: -60px;
