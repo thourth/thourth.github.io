@@ -344,7 +344,14 @@ template {
   -ms-animation: bottom-top 1s;
   animation: bottom-top 1s;
 }
-
+#page-header:not(.full_page),
+#nav.show {
+  -webkit-animation: header-effect 1s;
+  -moz-animation: header-effect 1s;
+  -o-animation: header-effect 1s;
+  -ms-animation: header-effect 1s;
+  animation: header-effect 1s;
+}
 #site-title,
 #site-subtitle {
   -webkit-animation: titleScale 1s;
