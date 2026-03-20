@@ -7458,14 +7458,13 @@ blockquote.pullquote.right {
   position: fixed;
   top: 10%;
   left: 50%;
+  transform: translateX(-50%);
   z-index: 1001;
   display: none;
-  margin-left: -300px;
   padding: 20px;
   width: 600px;
   background: var(--search-bg);
-  --search-height: 100vh;
-  border-radius: 8px;
+  border-radius: 2px;
 }
 @media screen and (max-width: 768px) {
   .search-dialog {
