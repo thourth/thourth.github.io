@@ -241,7 +241,7 @@ template {
 .cardHover,
 .layout > div:first-child:not(.nc),
 #aside-content .card-widget {
-  border: none;
+  border-bottom: 6px;
   padding: 0;
   background: #806161; /* 控えめで落ち着いた背景 */
   box-shadow: 0 1px 3px rgba(0,0,0.05,0.08); /* 軽い浮き感 */
@@ -265,11 +265,6 @@ template {
   padding: 6px 12px;
   margin: 0 4px;
   border-radius: 4px;
-  background: #f2f2f2;
-  color: #333;
-  transition: background 0.2s, color 0.2s;
-}
-.layout .pagination > *:not(.space):hover {
   background: #e6e6e6;
   color: #000;
 }
