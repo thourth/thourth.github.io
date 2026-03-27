@@ -7916,11 +7916,13 @@ blockquote.pullquote.right {
 .profile-list li {
   display: flex;
   margin-bottom: 6px;
+  gap:12px;
 }
 
 .label {
   width: 130px;       /* ラベル幅を固定 */
   font-weight: bold;  /* 太字 */
+  margin-right: 12px;
 }
 
 .value {
