@@ -7943,7 +7943,7 @@ blockquote.pullquote.right {
 }
 .aff-link {
   text-decoration: underline;
-  color: inherit;   /* 周囲と同じ色にする（好みに応じて変更可） */
+  color: #030769;   /* 周囲と同じ色にする（好みに応じて変更可） */
 }
 
 .aff-link:hover {
