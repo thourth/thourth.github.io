@@ -7928,3 +7928,16 @@ blockquote.pullquote.right {
 .value {
   flex: 1;
 }
+.pub-list {
+  list-style: none;        /* デフォルトの 1. を消す */
+  counter-reset: item;
+  padding-left: 0;
+}
+
+.pub-list li {
+  counter-increment: item;
+}
+
+.pub-list li::before {
+  content: "[" counter(item) "] ";
+}
