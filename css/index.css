@@ -260,10 +260,10 @@ template {
 
 #article-container .shuoshuo-item {
   border-bottom: 1px solid #cccccc;
-  padding: 16px 0;
+  padding: 4px 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.1);
 }
 .layout .pagination > *:not(.space) {
   border: 1px solid #ffffff;
@@ -2437,7 +2437,7 @@ figure.highlight pre .javascript .function {
   }
 }
 .layout > div:first-child {
-  width: 74%;
+  width: 100%;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
