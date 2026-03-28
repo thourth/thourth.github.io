@@ -4256,14 +4256,14 @@ figure.highlight pre .javascript .function {
 }
 
 #page-header.full_page {
-  height: 30vh !important; /* 変更②: 20vh important を 50vh !important に修正 (! が抜けていました) */
+  height: 40vh !important; /* 変更②: 20vh important を 50vh !important に修正 (! が抜けていました) */
   background-attachment: fixed !important;
 }
 
 #page-header.full_page #site-info {
   position: absolute;
   top: 50%; /* 変更③: 43% を 50% に変更 */
-  transform: translateY(-50%); /* 追加④: 文字を縦の「ど真ん中」に揃える設定 */
+  transform: translateY(-30%); /* 追加④: 文字を縦の「ど真ん中」に揃える設定 */
   padding: 0 10px;
   width: 100%;
 }
