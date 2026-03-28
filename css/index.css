@@ -2429,7 +2429,8 @@ figure.highlight pre .javascript .function {
   -webkit-align-self: flex-start;
   align-self: flex-start;
   -ms-flex-item-align: start;
-  padding: 50px 40px;
+
+  padding-top: 20px !important;
 }
 @media screen and (max-width: 768px) {
   .layout > div:first-child:not(.nc) {
@@ -7962,7 +7963,12 @@ blockquote.pullquote.right {
 }
 /* メインコンテンツを上に引き上げる */
 #content-inner {
-  margin-top: -50vh !important;
+  margin-top: -60vh !important;
   position: relative;
-  z-index: 10; /* ヘッダーの裏に隠れないようにする */
+  z-index: 10;
+  background-color: var(--global-bg); /* 引き上げた時にヘッダーの背景が透けないようにする */
+  border-radius: 8px 8px 0 0; /* 角を少し丸めると綺麗です（お好みで外してもOK） */
+}
+.layout > div:first-child:not(.nc) {
+  padding-top: 20px !important; /* 元々あった大きな上部余白(50px)を減らす */
 }
