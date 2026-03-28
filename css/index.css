@@ -4262,8 +4262,8 @@ figure.highlight pre .javascript .function {
 
 #page-header.full_page #site-info {
   position: absolute;
-  top: 50%; /* 変更③: 43% を 50% に変更 */
-  transform: translateY(-30%); /* 追加④: 文字を縦の「ど真ん中」に揃える設定 */
+  top: 30%; /* 変更③: 43% を 50% に変更 */
+  transform: translateY(-50%); /* 追加④: 文字を縦の「ど真ん中」に揃える設定 */
   padding: 0 10px;
   width: 100%;
 }
@@ -7967,8 +7967,7 @@ blockquote.pullquote.right {
   position: relative;
   z-index: 10;
   background-color: var(--global-bg); /* 引き上げた時にヘッダーの背景が透けないようにする */
-  border-radius: 8px 8px 0 0; /* 角を少し丸めると綺麗です（お好みで外してもOK） */
 }
 .layout > div:first-child:not(.nc) {
-  padding-top: 20px !important; /* 元々あった大きな上部余白(50px)を減らす */
+  padding-top: -10px !important; /* 元々あった大きな上部余白(50px)を減らす */
 }
