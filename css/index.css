@@ -7963,11 +7963,10 @@ blockquote.pullquote.right {
 }
 /* メインコンテンツを上に引き上げる */
 #content-inner {
-  margin-top: -75vh !important;
+  margin-top: -50vh !important;
   position: relative;
-  z-index: 10;
-  background-color: var(--global-bg); /* 引き上げた時にヘッダーの背景が透けないようにする */
+  z-index: 10; 
 }
 .layout > div:first-child:not(.nc) {
-  padding-top: -10px !important; /* 元々あった大きな上部余白(50px)を減らす */
+  padding-top: -20px !important; /* 元々あった大きな上部余白(50px)を減らす */
 }
