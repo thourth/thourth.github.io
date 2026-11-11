@@ -8029,9 +8029,16 @@ blockquote.pullquote.right {
 
 /* メニューバーの文字サイズ（px で直接指定） */
 #page-header #nav .site-name {
-  font-size: 20px;
+  font-size: 25px;
 }
 #page-header #nav a.site-page,
 #page-header #nav span.site-page {
-  font-size: 17px;
+  font-size: 23px;
+}
+
+/* パソコン版：ヘッダー写真の表示範囲を約1cm広げる（スマホ版は変更なし） */
+@media screen and (min-width: 769px) {
+  #page-header.full_page {
+    height: calc(40vh + 1cm) !important;
+  }
 }
