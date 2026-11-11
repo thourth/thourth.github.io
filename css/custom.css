@@ -8154,3 +8154,19 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
   }
 }
+
+/* ===== 写真と本文カードの間・カード上部の余白を詰める =====
+   ヘッダー部分(#body-wrap)を写真の高さぴったりにして、本文を写真の直下から始める。
+   （以前の「マイナスの margin-top で引き上げる」調整は不要になるので打ち消す） */
+#body-wrap.page {
+  min-height: 0;
+  height: auto;
+}
+main#content-inner.layout {
+  margin-top: 0 !important;
+  padding-top: 0;
+}
+/* カード内の最初の見出しの上の余白をなくす */
+#content-inner #page > section:first-child > h2:first-child {
+  margin-top: 0;
+}
