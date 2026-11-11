@@ -68,38 +68,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const isPrismjs = plugin === 'prismjs'
     const highlightShrinkClass = isHighlightShrink === true ? 'closed' : ''
     const highlightShrinkEle = isHighlightShrink !== undefined ? '<i class="fas fa-angle-down expand"></i>' : ''
-    const highlightCopyEle = highlightCopy ? '<div class="copy-notice"></div><i class="fas fa-paste copy-button"></i>' : ''
+    const highlightCopyEle = highlightCopy ? '<i class="fas fa-paste copy-button"></i>' : ''
     const highlightMacStyleEle = '<div class="macStyle"><div class="mac-close"></div><div class="mac-minimize"></div><div class="mac-maximize"></div></div>'
     const highlightFullpageEle = highlightFullpage ? '<i class="fa-solid fa-up-right-and-down-left-from-center fullpage-button"></i>' : ''
 
-    const alertInfo = (ele, text) => {
-      if (GLOBAL_CONFIG.Snackbar !== undefined) {
-        btf.snackbarShow(text)
-      } else {
-        ele.textContent = text
-        ele.style.opacity = 1
-        setTimeout(() => { ele.style.opacity = 0 }, 800)
-      }
-    }
-
-    const copy = async (text, ctx) => {
+    const copy = async text => {
       try {
         await navigator.clipboard.writeText(text)
-        alertInfo(ctx, GLOBAL_CONFIG.copy.success)
       } catch (err) {
         console.error('Failed to copy: ', err)
-        alertInfo(ctx, GLOBAL_CONFIG.copy.noSupport)
       }
     }
 
     // click events
-    const highlightCopyFn = (ele, clickEle) => {
+    const highlightCopyFn = ele => {
       const $buttonParent = ele.parentNode
       $buttonParent.classList.add('copy-true')
       const preCodeSelector = isPrismjs ? 'pre code' : 'table .code pre'
       const codeElement = $buttonParent.querySelector(preCodeSelector)
       if (!codeElement) return
-      copy(codeElement.innerText, clickEle.previousElementSibling)
+      copy(codeElement.innerText)
       $buttonParent.classList.remove('copy-true')
     }
 
@@ -118,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const $target = e.target.classList
       const currentElement = e.currentTarget
       if ($target.contains('expand')) highlightShrinkFn(currentElement)
-      else if ($target.contains('copy-button')) highlightCopyFn(currentElement, e.target)
+      else if ($target.contains('copy-button')) highlightCopyFn(currentElement)
       else if ($target.contains('fullpage-button')) codeFullpage(currentElement, e.target)
     }
 
@@ -381,6 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const rightsideScrollPercent = currentTop => {
     const scrollPercent = btf.getScrollPercent(currentTop, document.body)
     const goUpElement = document.getElementById('go-up')
+    if (!goUpElement) return
 
     if (scrollPercent < 95) {
       goUpElement.classList.add('show-percent')
@@ -567,23 +556,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btf.addEventListenerPjax(window, 'scroll', tocScrollFn, { passive: true })
   }
 
-  const handleThemeChange = mode => {
-    const globalFn = window.globalFn || {}
-    const themeChange = globalFn.themeChange || {}
-    if (!themeChange) {
-      return
-    }
-
-    Object.keys(themeChange).forEach(key => {
-      const themeChangeFn = themeChange[key]
-      if (['disqus', 'disqusjs'].includes(key)) {
-        setTimeout(() => themeChangeFn(mode), 300)
-      } else {
-        themeChangeFn(mode)
-      }
-    })
-  }
-
   /**
    * Rightside
    */
@@ -604,18 +576,6 @@ document.addEventListener('DOMContentLoaded', () => {
       newEle.addEventListener('click', exitReadMode)
       $body.appendChild(newEle)
     },
-    darkmode: () => { // switch between light and dark mode
-      const willChangeMode = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
-      if (willChangeMode === 'dark') {
-        btf.activateDarkMode()
-        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
-      } else {
-        btf.activateLightMode()
-        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)
-      }
-      btf.saveToLocal.set('theme', willChangeMode, 2)
-      handleThemeChange(willChangeMode)
-    },
     'rightside-config': item => { // Show or hide rightside-hide-btn
       const hideLayout = item.firstElementChild
       if (hideLayout.classList.contains('show')) {
@@ -632,8 +592,6 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     'hide-aside-btn': () => { // Hide aside
       const $htmlDom = document.documentElement.classList
-      const saveStatus = $htmlDom.contains('hide-aside') ? 'show' : 'hide'
-      btf.saveToLocal.set('aside-status', saveStatus, 2)
       $htmlDom.toggle('hide-aside')
     },
     'mobile-toc-button': (p, item) => { // Show mobile toc
@@ -655,9 +613,6 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     'chat-btn': () => { // Show chat
       window.chatBtnFn()
-    },
-    translateLink: () => { // switch between traditional and simplified chinese
-      window.translateFn.translatePage()
     }
   }
 
@@ -874,12 +829,6 @@ document.addEventListener('DOMContentLoaded', () => {
     GLOBAL_CONFIG.islazyloadPlugin && lazyloadImg()
     GLOBAL_CONFIG.copyright !== undefined && addCopyright()
 
-    if (GLOBAL_CONFIG.autoDarkmode) {
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        if (btf.saveToLocal.get('theme') !== undefined) return
-        e.matches ? handleThemeChange('dark') : handleThemeChange('light')
-      })
-    }
   }
 
   const forPostFn = () => {
@@ -922,7 +871,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 處理 hexo-blog-encrypt 事件
   window.addEventListener('hexo-blog-decrypt', e => {
     forPostFn()
-    window.translateFn.translateInitialization()
     Object.values(window.globalFn.encrypt).forEach(fn => {
       fn()
     })

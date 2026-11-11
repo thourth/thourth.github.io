@@ -70,19 +70,6 @@
       }
     },
 
-    snackbarShow: (text, showAction = false, duration = 2000) => {
-      const { position, bgLight, bgDark } = GLOBAL_CONFIG.Snackbar
-      const bg = document.documentElement.getAttribute('data-theme') === 'light' ? bgLight : bgDark
-      Snackbar.show({
-        text,
-        backgroundColor: bg,
-        showAction,
-        duration,
-        pos: position,
-        customClass: 'snackbar-css'
-      })
-    },
-
     diffDate: (inputDate, more = false) => {
       const dateNow = new Date()
       const datePost = new Date(inputDate)
@@ -96,7 +83,7 @@
 
       if (!more) return Math.floor(diffDay)
 
-      if (diffMonth > 12) return datePost.toISOString().slice(0, 10)
+      if (!dateSuffix || diffMonth > 12) return datePost.toISOString().slice(0, 10)
       if (diffMonth >= 1) return `${Math.floor(diffMonth)} ${dateSuffix.month}`
       if (diffDay >= 1) return `${Math.floor(diffDay)} ${dateSuffix.day}`
       if (diffHour >= 1) return `${Math.floor(diffHour)} ${dateSuffix.hour}`
