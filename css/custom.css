@@ -8064,3 +8064,20 @@ blockquote.pullquote.right {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--site-font);
 }
+
+/* ===== 本文の文字サイズを大きく（14px → 16px）。見出し・メニューは据え置き ===== */
+#content-inner,
+#footer {
+  font-size: 16px;
+}
+#content-inner h2 {
+  font-size: 21px;
+}
+/* 長いメールアドレス等が狭い画面ではみ出さないように折り返す */
+.profile-list .value {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.profile-list .label {
+  flex-shrink: 0;
+}
