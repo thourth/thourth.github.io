@@ -7927,3 +7927,89 @@ blockquote.pullquote.right {
 .value {
   flex: 1;
 }
+
+/* ===== メニューバー：シンプル・アカデミック ===== */
+:root {
+  --nav-bg: #ffffff;
+  --nav-text: #1f3a5f;      /* 濃紺 */
+  --nav-text-sub: #4a5a70;
+  --nav-accent: #1f3a5f;
+  --nav-border: #d9dee5;
+}
+
+#page-header #nav,
+#page-header.nav-fixed #nav,
+#page-header.not-top-img #nav {
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  backdrop-filter: none;
+  font-size: 1.05em;
+  height: 56px;
+}
+
+/* サイト名 */
+#page-header #nav #blog-info,
+#page-header #nav #blog-info a,
+#page-header #nav .site-name {
+  color: var(--nav-text);
+  text-shadow: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+#page-header #nav #blog-info .site-icon {
+  height: 28px;
+}
+
+/* メニュー項目 */
+#page-header #nav .menus_items .menus_item {
+  padding: 0 0 0 26px;
+}
+#page-header #nav a.site-page,
+#page-header #nav span.site-page,
+#page-header #nav #toggle-menu {
+  position: relative;
+  color: var(--nav-text-sub);
+  text-shadow: none;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+#page-header #nav .menus_items i {
+  display: none;            /* アイコンを隠して文字だけに */
+}
+#page-header #nav #search-button i {
+  display: inline-block;    /* 検索アイコンは残す */
+}
+#page-header #nav #search-button {
+  display: inline-block;
+  padding-left: 26px;
+}
+
+/* ホバー：細い下線 */
+#page-header #nav a.site-page::after,
+#page-header #nav span.site-page::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: var(--nav-accent);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+#page-header #nav a.site-page:hover,
+#page-header #nav span.site-page:hover,
+#page-header #nav #toggle-menu:hover,
+#page-header #nav #blog-info:hover,
+#page-header #nav #blog-info a:hover {
+  color: var(--nav-accent);
+}
+#page-header #nav a.site-page:hover::after,
+#page-header #nav span.site-page:hover::after {
+  transform: scaleX(1);
+}
+#page-header #nav #toggle-menu span.site-page::after {
+  display: none;
+}
