@@ -8080,6 +8080,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .profile-list .label {
   flex-shrink: 0;
+  width: 170px;         /* "Research Interests" が1行に収まる幅 */
+  white-space: nowrap;
 }
 
 /* ===== 見出しと本文の間を詰める ===== */
