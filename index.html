@@ -231,7 +231,7 @@
 
     <hr> <section class="publication-section">
       <h2>Publications</h2>
-      <ol class="pub-list">
+      <ol class="pub-list" reversed>
         <li>
           <strong><u>Yasu Gen</u></strong>, Hiroaki Matsunaga, and Jojiro Totsuka,<br>
           <em>Canonical Commutation Relations and Poisson Brackets with Non-locality in Time</em>,<br>
@@ -254,7 +254,7 @@
 
     <section class="presentation-section">
       <h2>Presentations</h2>
-      <ol class="pub-list">
+      <ol class="pub-list" reversed>
         <li>
           &ldquo;弦の場の理論における境界項と二点振幅&rdquo;<br>
           Strings and Fields 2026, YITP, 2026/08/18, [<a href="/Notes/弦と場2026.pdf" target="_blank" class="aff-link">poster</a>]
@@ -386,5 +386,11 @@
       <div id="search-mask"></div>
     <script src="/js/search/local-search.js"></script></div>
 
-  </body>
+  <script>
+document.querySelectorAll("ol.pub-list[reversed]").forEach(function (ol) {
+  ol.style.counterReset = "item " + (ol.children.length + 1);
+  Array.prototype.forEach.call(ol.children, function (li) { li.style.counterIncrement = "item -1"; });
+});
+</script>
+</body>
 </html>
