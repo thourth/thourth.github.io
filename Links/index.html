@@ -289,12 +289,12 @@
 
     <section class="presentation-section">
       <h2>Notes</h2>
-      <ol class="pub-list">
+      <ol class="pub-list" reversed>
         <li><a href="/Notes/JC(CPT, OSFT).pdf"> JC(OSFT,CPT),2026/1 </a></li>
         <li><a href="/Notes/卒研_弦理論入門.pdf"> 卒研 </a></li>
         </ol>
       <h2>Poster, slide</h2>
-      <ol class="pub-list">
+      <ol class="pub-list" reversed>
         <li><a href="/Notes/弦と場2026.pdf"> 弦と場2026(ポスター) </a></li>
         <li><a href="/Notes/夏学2026.pdf"> 夏学2026(ポスター) </a></li>
         <li><a href="/Notes/奈良女素論７.17.pdf"> 奈良女子大学セミナー2026（スライド) </a></li>
@@ -511,5 +511,11 @@
 
 
     
-  </body>
+  <script>
+document.querySelectorAll("ol.pub-list[reversed]").forEach(function (ol) {
+  ol.style.counterReset = "item " + (ol.children.length + 1);
+  Array.prototype.forEach.call(ol.children, function (li) { li.style.counterIncrement = "item -1"; });
+});
+</script>
+</body>
 </html>
