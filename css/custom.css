@@ -1851,7 +1851,7 @@ button {
   touch-action: manipulation;
 }
 a {
-  color: #99a9bf;
+  color: #1f6f78;
   text-decoration: none;
   word-wrap: break-word;
   -webkit-transition: all 0.2s;
@@ -1862,7 +1862,7 @@ a {
   overflow-wrap: break-word;
 }
 a:hover {
-  color: #a9d5cd;
+  color: #3a9aa5;
 }
 .text-center {
   text-align: center;
